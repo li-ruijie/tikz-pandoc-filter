@@ -6,7 +6,7 @@ A Pandoc Lua filter that converts TikZ diagrams to PNG and SVG images.
 
 - Processes TikZ environments from Markdown to images
 - Generates both PNG and SVG output formats
-- Smart caching based on source file modification time
+- Caching keyed on source file modification time
 - Cross-platform support (Windows and Unix)
 - Configurable output options (alignment, caption position, image format)
 - Embedded PDF cropping (no external pdfcrop dependency)
@@ -97,7 +97,7 @@ Filenames are generated from:
 
 ## Caching
 
-The filter uses smart caching to avoid regenerating images unnecessarily:
+The filter caches rendered images to avoid regenerating them unnecessarily:
 
 1. Compares image modification time with source Markdown file
 2. Only regenerates when source file has been modified
